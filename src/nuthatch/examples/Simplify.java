@@ -29,7 +29,7 @@ public class Simplify extends BaseWalk<ExprWalker> {
 
 	public static void main(String[] args) {
 		Expr e = Add(Int(5), Mul(Add(Int(7), Int(3)), Int(0)));
-		e = Mul(Int(1), Mul(Int(1), Mul(Int(1), Int(0))));
+		//e = Mul(Int(1), Mul(Int(1), Mul(Int(1), Int(0))));
 		System.out.println("Input:  " + e);
 
 		ExprWalker walker = new ExprWalker(new ExprCursor(e), new Simplify());
