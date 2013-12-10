@@ -57,7 +57,7 @@ public class TreeBasedBuilder<Value, Type, T extends Tree<Value, Type>> {
 				}
 				else if(down(w)) {
 					buildWalk.step(w);
-					assert (buildCursor.isAtPlaceholder()) : "Cursor not at placeholder, we don't want it to overwrite a legitimate child!";
+					assert (buildCursor.isAtPlaceholder()) : "Cursor not at placeholder; we don't want it to overwrite a legitimate child!";
 					buildCursor.createNode(stdCursor.getName(), stdCursor.getType(), stdCursor.getData(), stdCursor.getNumChildren());
 				}
 				else if(up(w)) {
@@ -72,6 +72,9 @@ public class TreeBasedBuilder<Value, Type, T extends Tree<Value, Type>> {
 				}
 			}
 		};
+		//We are using a SimpleWalker object to walk the tree. It is fed with the standardTreeCursor, which walks the input tree.
+		//
+		//Execute!
 		SimpleWalker<Value, Type> treeWalker = new SimpleWalker<Value, Type>(stdCursor, newTree);
 		treeWalker.start();
 

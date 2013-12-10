@@ -4,6 +4,7 @@ import nuthatch.library.Action;
 import nuthatch.library.Walk;
 import nuthatch.walker.Walker;
 
+// NOTE as it is, this class is identical to the default walk.
 public class StandardTreeBuilderWalk<W extends Walker<?, ?>> implements Walk<W> {
 
 	private Action<W> action;
